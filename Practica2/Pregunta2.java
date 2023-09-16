@@ -2,11 +2,11 @@ import java.util.Scanner;
 public class Pregunta2 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int nota = scan.nextInt();
-        if(nota >= 51){
-            System.out.println("Aprobado.");
+        int edad = scan.nextInt();
+        if(edad >= 18){
+            System.out.println("Es mayor de edad.");
         }else{
-            System.out.println("Reprobado.");
+            System.out.println("Es menor de edad.");
         }
-    }    
+    }
 }

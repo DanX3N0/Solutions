@@ -2,17 +2,29 @@ import java.util.Scanner;
 public class Pregunta5 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        double lado1 = scan.nextDouble();
-        double lado2 = scan.nextDouble();
-        double lado3 = scan.nextDouble();
+        int primerNumero = scan.nextInt();
+        int segundoNumero = scan.nextInt();
+        int tercerNumero = scan.nextInt();
         
-        if(Math.pow(lado1, 2) == Math.pow(lado2, 2) + Math.pow(lado3, 2) ||
-           Math.pow(lado2, 2) == Math.pow(lado1, 2) + Math.pow(lado3, 2) ||
-           Math.pow(lado3, 2) == Math.pow(lado1, 2) + Math.pow(lado2, 2)){
-            System.out.println("Es un triangulo rectangulo.");
+        if(primerNumero >= segundoNumero && primerNumero >= tercerNumero){
+            if(segundoNumero >= tercerNumero){
+                System.out.println(tercerNumero + " " + segundoNumero + " " + primerNumero);
+            }else{
+                System.out.println(segundoNumero + " " + tercerNumero + " " + primerNumero);
+            }
+        }else if(segundoNumero >= primerNumero && segundoNumero >= tercerNumero){
+            if(primerNumero >= tercerNumero){
+                System.out.println(tercerNumero + " " + primerNumero + " " + segundoNumero);
+            }else{
+                System.out.println(primerNumero + " " + tercerNumero + " " + segundoNumero);
+            }
         }else{
-            System.out.println("No es un triangulo rectangulo.");
+            if(primerNumero >= segundoNumero){
+                System.out.println(segundoNumero + " " + primerNumero + " " + tercerNumero);
+            }else{
+                System.out.println(primerNumero + " " + segundoNumero + " " + tercerNumero);
+            }
         }
-
-    }    
+        
+    }
 }

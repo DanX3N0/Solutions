@@ -2,15 +2,30 @@ import java.util.Scanner;
 public class Pregunta10 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        double horas = scan.nextInt();
-        double minutos = scan.nextInt();
-        double tarifa = 2.5;
-        
-        double pagoHoras = horas * tarifa;
-        double pagoMinutos = (minutos / 60) * tarifa;
+        int primerNota = scan.nextInt();
+        int segundaNota = scan.nextInt();
+        int tercerNota = scan.nextInt();
+        int sumaMejoresNotas;
 
-        double resultado = pagoHoras + pagoMinutos;
-
-        System.out.println(resultado);
+        if(primerNota >= segundaNota  && primerNota >= tercerNota){
+            if(segundaNota >= tercerNota){
+                sumaMejoresNotas = primerNota + segundaNota;
+            }else{
+                sumaMejoresNotas = primerNota + tercerNota;
+            }
+        }else if(segundaNota >= primerNota && segundaNota >= tercerNota){
+            if(primerNota >= tercerNota){
+                sumaMejoresNotas = segundaNota + primerNota;
+            }else{
+                sumaMejoresNotas = segundaNota + tercerNota;
+            }
+        }else{
+            if(primerNota >= segundaNota){
+                sumaMejoresNotas = tercerNota + primerNota;
+            }else{
+                sumaMejoresNotas = tercerNota + segundaNota;
+            }
+        }
+        System.out.println(sumaMejoresNotas);
     }
 }
